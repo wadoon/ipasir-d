@@ -1,0 +1,3 @@
+[submodule "ipasir"]
+	path = ipasir
+	url = git@github.com:biotomas/ipasir.git
