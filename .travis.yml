@@ -2,8 +2,6 @@ sudo: false
 language: d
 d:
   - dmd
-  - ldc-beta
-  - ldc
 
 os:
   - linux
@@ -18,4 +16,5 @@ branches:
   - /^v\d+\.\d+\.\d+([+-]\S*)*$/
 
 script:
+  - (cd ipasir; make)
   - dub build
