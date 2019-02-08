@@ -1,0 +1,19 @@
+name "ipasir-d"
+description "An interface for IPASIR api of SAT solvers."
+authors "Alexander Weigl <weigl@kit.edu>"
+homepage "https://github.com/waddon/ipasir-d"
+license "GPL-3.0"
+copyright "Copyright © 2019, Alexander Weigl"
+
+configuration "minisat" {
+    targetType: "library",
+    targetName: "ipasird_minisat",
+    sourceFiles: [
+        "source/ipasirc.d","source/ipasir.d",
+        "ipasir/sat/minisat220/libipasirminisat220.a"
+    ],
+    libs: "stdc++",
+    preBuildCommands:[
+        "cd ipasir; make"
+    ]
+}
