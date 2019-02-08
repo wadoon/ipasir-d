@@ -1,0 +1,21 @@
+sudo: false
+language: d
+d:
+  - dmd
+  - ldc-beta
+  - ldc
+
+os:
+  - linux
+  - osx
+
+env:
+  - BUILD=dub
+
+branches:
+  only:
+  - master
+  - /^v\d+\.\d+\.\d+([+-]\S*)*$/
+
+script:
+  - dub build
