@@ -8,12 +8,24 @@ copyright "Copyright © 2019, Alexander Weigl"
 configuration "minisat" {
     targetType "library"
     targetName "ipasird_minisat"
-    sourceFiles [
-        "source/ipasirc.d","source/ipasir.d",
+    sourceFiles
+        "source/ipasirc.d"
+        "source/ipasir.d"
         "ipasir/sat/minisat220/libipasirminisat220.a"
-    ]
+
     libs "stdc++"
-    preBuildCommands [
-        "cd ipasir; make"
-    ]
+    preBuildCommands "cd ipasir; make"
+}
+
+
+configuration "picosat" {
+    targetType "library"
+    targetName "ipasird_picosat"
+    sourceFiles
+        "source/ipasirc.d"
+        "source/ipasir.d"
+        "ipasir/sat/picosat961/libipasirpicosat961.a"
+
+    libs "stdc++"
+    preBuildCommands "cd ipasir; make"
 }

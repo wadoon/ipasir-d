@@ -16,5 +16,5 @@ branches:
   - /^v\d+\.\d+\.\d+([+-]\S*)*$/
 
 script:
-  - (cd ipasir; make)
-  - dub build
+  - dub build --config "minisat"
+  - dub build --config "picosat"
