@@ -25,9 +25,13 @@ libipasird_picosat.so: source/ipasir.o ipasir/sat/minisat220/libipasirminisat220
 
 all: libipasird_minisat.a libipasird_picosat.a libipasird_minisat.so libipasird_picosat.so
 
+test: libipasird_picosat.a
+	dmd -L-lstdc++ -unittest libipasird_picosat.a source/unittest.d source/ipasir.d
+	./unittest
+
 
 clean:
-	rm libipasird_minisat.a libipasird_picosat.a \
+	rm -f libipasird_minisat.a libipasird_picosat.a \
 	   libipasird_minisat.so libipasird_picosat.so \
 	   source/ipasir.o ipasir/sat/minisat220/libipasirminisat220.a \
 	   ipasir/sat/minisat220/libipasirminisat220.a

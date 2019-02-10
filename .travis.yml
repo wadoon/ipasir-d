@@ -16,5 +16,9 @@ branches:
   - /^v\d+\.\d+\.\d+([+-]\S*)*$/
 
 script:
-  - dub build --config "minisat"
-  - dub build --config "picosat"
+  - make all
+#  - dub build --config "minisat"
+#  - dub build --config "picosat"
+
+test:
+  - make test
