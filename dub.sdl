@@ -8,11 +8,10 @@ copyright "Copyright © 2019, Alexander Weigl"
 configuration "minisat" {
     targetType "library"
     targetName "ipasird_minisat"
+    mainSourceFile "source/unittest.d"
     sourceFiles
-        "source/ipasirc.d"
-        "source/ipasir.d"
         "ipasir/sat/minisat220/libipasirminisat220.a"
-
+        "source/ipasir.d"
     libs "stdc++"
     preBuildCommands "cd ipasir; make"
 }
@@ -21,10 +20,10 @@ configuration "minisat" {
 configuration "picosat" {
     targetType "library"
     targetName "ipasird_picosat"
+    mainSourceFile "source/unittest.d"
     sourceFiles
-        "source/ipasirc.d"
-        "source/ipasir.d"
         "ipasir/sat/picosat961/libipasirpicosat961.a"
+        "source/ipasir.d"
 
     libs "stdc++"
     preBuildCommands "cd ipasir; make"
