@@ -11,15 +11,15 @@ libipasird_minisat.a: source/ipasir.o ipasir/sat/minisat220/libipasirminisat220.
 	cp ipasir/sat/minisat220/libipasirminisat220.a $@
 	ar r $@ source/ipasir.o
 
-libipasird_picosat.a: source/ipasir.o ipasir/sat/minisat220/libipasirminisat220.a
-	cp ipasir/sat/minisat220/libipasirminisat220.a $@
+libipasird_picosat.a: source/ipasir.o ipasir/sat/picosat961/libipasirpicosat961.a
+	cp ipasir/sat/picosat961/libipasirpicosat961.a $@
 	ar r $@ source/ipasir.o
 
 
 libipasird_minisat.so: source/ipasir.o ipasir/sat/minisat220/libipasirminisat220.a
 	dmd -L-lstdc++ -shared -of$@ $<
 
-libipasird_picosat.so: source/ipasir.o ipasir/sat/minisat220/libipasirminisat220.a
+libipasird_picosat.so: source/ipasir.o ipasir/sat/picosat961/libipasirpicosat961.a
 	dmd -L-lstdc++ -shared -of$@ $<
 
 
